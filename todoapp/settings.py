@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 from pathlib import Path
 import os
 import django_heroku
-
+from boto.s3.connection import S3Connection
 from django.core.exceptions import ImproperlyConfigured
 
 
@@ -32,7 +32,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = get_env_variable('SECRET_KEY')
+SECRET_KEY = get_env_variable('S3_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
